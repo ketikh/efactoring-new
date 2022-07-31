@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/select2.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/perfect-scrollbar.css">
+    <!-- <script src="js/jquery-1.12.4.js"></script> -->
+    <script src="js/jquery-3.1.0.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/chart.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/select2.min.js"></script>
+    <script src="js/perfect-scrollbar.js"></script>
+    <title>efactroring</title>
+</head>
+
+<body>
+    <div class="overlay"></div>
+    <div class="modal" id="success">
+        <div class="modal-dialog modal-dialog-centered lit-w-modal">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"><img src="img/modal-close.svg" alt="Close"></span>
+                </button>
+                <div class="modal-body">
+                    <div class="info-popup-img success-icon"><img src="img/tick.svg" alt="Check"></div>
+                    <div class="info-popup-text">
+                        ერზთჯერადი პაროლი გამოგზავნილია
+                        <span>შეამოწმე ელ.ფოსტა</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div class="h-top">
+            <a href="">
+                <img src="img/colored-logo.svg" alt="Logo" class="blue-logo">
+                <img src="img/logo-green.svg" alt="Logo" class="green-logo">
+                <img src="img/mini-blue-logo.svg" alt="Logo" class="mini-blue-logo">
+                <img src="img/mini-logo-green.svg" alt="Logo" class="mini-green-logo">
+            </a>
+            <div class="right-side">
+                <a href="" class="site-link">efactoring.ge</a>
+                <div class="lang-switcher">
+                    <a class="accordion-heading" data-toggle="collapse" data-target="#language">
+                        English
+                    </a>
+                    <ul class="sub-menu collapse" id="language">
+                        <li>
+                            <a href="" class="">English</a>
+                        </li>
+                        <li>
+                            <a href="">ქართული</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        <div class="h-switcher">
+            <label class="main-switcher switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+                <span class="checked-factoring check-span">ფაქტორინგი</span>
+                <span class="checked-investor check-span">ინვესტორი</span>
+            </label>
+        </div>
+    </header>
+    <section>
+        <div class="auth-container without-bg">
+            <h2>რეგისტრაცია</h2>
+            <div class="sub-title">წარმომადგენლის ინფორმაცია</div>
+            <div class="auth-field-cont">
+                <label class="pure-material-textfield-outlined">
+                    <input placeholder=" ">
+                    <span>პოზიცია</span>
+                </label>
+                <label class="pure-material-textfield-outlined half-field">
+                    <input placeholder=" ">
+                    <span>სახელი</span>
+                </label>
+                <label class="pure-material-textfield-outlined half-field">
+                    <input placeholder=" ">
+                    <span>გვარი</span>
+                </label>
+                <label class="pure-material-textfield-outlined half-field">
+                    <input placeholder=" ">
+                    <span>პირადი ნომერი</span>
+                </label>
+                <label class="pure-material-textfield-outlined half-field">
+                    <input type="text" class="datepicker" placeholder=" ">
+                    <span>აირჩიე თარიღი</span>
+                </label>
+                <label class="pure-material-textfield-outlined half-field">
+                    <input placeholder=" ">
+                    <span>საბუთის ნომერი</span>
+                </label>
+                <label class="pure-material-textfield-outlined half-field">
+                    <input type="text" class="datepicker" placeholder=" ">
+                    <span>აირჩიე თარიღი</span>
+                </label>
+                <label class="pure-material-textfield-outlined half-field">
+                    <input placeholder=" ">
+                    <span>გამცემი ორგანო</span>
+                </label>
+                <label class="pure-material-textfield-outlined half-field">
+                    <input type="text" class="datepicker" placeholder=" ">
+                    <span>აირჩიე თარიღი</span>
+                </label>
+                <label class="pure-material-textfield-outlined">
+                    <input placeholder=" ">
+                    <span>იურიდიული მისამართი</span>
+                </label>
+                <label class="pure-material-textfield-outlined">
+                    <input placeholder=" ">
+                    <span>ფიზიკური მისამართი</span>
+                </label>
+            </div>
+            <a href="registration-step3.html" class="button blue-fill-btn">შემდეგი</a>
+            <div class="steps-block">
+                <div class="success-step">1</div>
+                <div class="active-step">2</div>
+                <div>3</div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+
+        $('.main-switcher input').change(function () {
+            $('body').toggleClass('factoring-mode');
+        });
+
+        $.datepicker._updateDatepicker_original = $.datepicker._updateDatepicker;
+        $.datepicker._updateDatepicker = function (inst) {
+            $.datepicker._updateDatepicker_original(inst);
+            var afterShow = this._get(inst, 'afterShow');
+            if (afterShow)
+                afterShow.apply((inst.input ? inst.input[0] : null));  // trigger custom callback
+        }
+        $(".datepicker").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            dayNames: ["კვირა", "ორშაბათი", "სამშაბათი", "ოთხშაბათი", "ხუთშაბათი", "პარასკევი", "შაბათი"],
+            monthNames: ["იანვარი", "თებერვალი", "მარტი", "აპრილი", "მაისი", "ივნისი", "ივლისი", "აგვისტო"],
+            dayNamesMin: ["კვი", "ორშ", "სამ", "ოთხ", "ხუთ", "პარ", "შაბ"],
+            monthNamesShort: ["იანვარი", "თებერვალი", "მარტი", "აპრილი", "მაისი", "ივნისი", "ივლისი", "აგვისტო", "სექტემბერი", "ოქტომბერი", "ნოემბერი", "დეკემბერი"],
+            firstDay: 1,
+            afterShow: function () {
+                $('#ui-datepicker-div').addClass('show');
+                $('.ui-datepicker select').select2({
+                    minimumResultsForSearch: -1,
+                    theme: "datepicker"
+                });
+                $('.ui-datepicker select').on("select2:open", function () {
+                    $('.select2-results').perfectScrollbar();
+                });
+            },
+        });
+
+
+
+    </script>
+</body>
+
+</html>

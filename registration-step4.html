@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/select2.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/jquery-3.1.0.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/chart.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/select2.min.js"></script>
+    <title>efactroring</title>
+</head>
+
+<body>
+    <div class="overlay"></div>
+    <div class="modal" id="success">
+        <div class="modal-dialog modal-dialog-centered lit-w-modal">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"><img src="img/modal-close.svg" alt="Close"></span>
+                </button>
+                <div class="modal-body">
+                    <div class="info-popup-img success-icon"><img src="img/tick.svg" alt="Check"></div>
+                    <div class="info-popup-text">
+                        ერზთჯერადი პაროლი გამოგზავნილია
+                        <span>შეამოწმე ელ.ფოსტა</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div class="h-top">
+            <a href="">
+                <img src="img/colored-logo.svg" alt="Logo" class="blue-logo">
+                <img src="img/logo-green.svg" alt="Logo" class="green-logo">
+                <img src="img/mini-blue-logo.svg" alt="Logo" class="mini-blue-logo">
+                <img src="img/mini-logo-green.svg" alt="Logo" class="mini-green-logo">
+            </a>
+            <div class="right-side">
+                <a href="" class="site-link">efactoring.ge</a>
+                <div class="lang-switcher">
+                    <a class="accordion-heading" data-toggle="collapse" data-target="#language">
+                        English
+                    </a>
+                    <ul class="sub-menu collapse" id="language">
+                        <li>
+                            <a href="" class="">English</a>
+                        </li>
+                        <li>
+                            <a href="">ქართული</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        <div class="h-switcher">
+            <label class="main-switcher switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+                <span class="checked-factoring check-span">ფაქტორინგი</span>
+                <span class="checked-investor check-span">ინვესტორი</span>
+            </label>
+        </div>
+    </header>
+    <section>
+        <div class="auth-container without-bg">
+            <h2>რეგისტრაცია</h2>
+            <div class="sub-title">SMS ვერიფიკაცია</div>
+            <label class="pure-material-textfield-outlined">
+                <input placeholder=" " value="+995 597 45 75 69">
+                <span>კომპანიის დასახელება</span>
+            </label>
+            <label class="pure-material-textfield-outlined">
+                <input placeholder=" ">
+                <span>SMS კოდი</span>
+                <div class="sms-code">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="17.4" height="19.4" viewBox="0 0 17.4 19.4">
+                        <g transform="translate(0.7 0.7)">
+                            <g transform="translate(0)">
+                                <path style="fill: none;
+                                stroke: #5976F0;
+                                stroke-width: 1.4px;"
+                                    d="M45.805,10.048a8,8,0,0,1-16,0,.475.475,0,0,1,.949,0,7.051,7.051,0,1,0,7.051-7.009h-.823l1.177,1.31a.47.47,0,0,1-.038.666.477.477,0,0,1-.67-.038L35.768,3.1a.8.8,0,0,1,0-1.075L37.451.157a.477.477,0,0,1,.67-.038.47.47,0,0,1,.038.666L36.982,2.1h.823A7.985,7.985,0,0,1,45.805,10.048Z"
+                                    transform="translate(-29.805 0)" />
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+            </label>
+            <button class="button blue-fill-btn" data-toggle="modal" data-target="#success">შემდეგი</button>
+            <div class="steps-block">
+                <div class="success-step">1</div>
+                <div class="success-step">2</div>
+                <div class="active-step">3</div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        $('.show-pass').on('click', function () {
+            $(this).parents('.password-field').find('input').prop('type', 'text');
+            $(this).hide();
+            $(this).next('.hide-pass').show();
+        });
+
+        $('.hide-pass').on('click', function () {
+            $(this).parents('.password-field').find('input').prop('type', 'password');
+            $(this).hide();
+            $(this).prev('.show-pass').show();
+        });
+
+        $('.main-switcher input').change(function () {
+            $('body').toggleClass('factoring-mode');
+        });
+
+    </script>
+</body>
+
+</html>

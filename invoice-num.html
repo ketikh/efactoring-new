@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/select2.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- <script src="js/jquery-1.12.4.js"></script> -->
+    <script src="js/jquery-3.1.0.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/chart.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/select2.min.js"></script>
+    <title>efactroring</title>
+</head>
+
+<body>
+    <div class="overlay"></div>
+
+    <div class="modal full-size-xs" id="exampleModalCenter">
+        <div class="modal-dialog modal-dialog-centered big-w-modal">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"><img src="img/modal-close.svg" alt="Close"></span>
+                </button>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">ინვოისის დაფარვა</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="select-cont">
+                        <select class="js-example-basic-single" name="state">
+                            <option value=""></option>
+                            <option value="1">ინვოისი N 1135 - ინვოისის თანხა 40 000 gel / გადასახდელი 20 000 gel
+                            </option>
+                            <option value="2">უარყოფილი</option>
+                            <option value="3">პროცესში</option>
+                            <option value="4">დახურული</option>
+                        </select>
+                        <label class="select-label">აირჩიე დასაფარი ინვოისი</label>
+                    </div>
+                    <div class="half-field">
+                        <label class="pure-material-textfield-outlined">
+                            <input placeholder=" " value="23 მაისი 2023">
+                            <span>დაფარვის თარიღი</span>
+                        </label>
+                        <label class="pure-material-textfield-outlined">
+                            <input placeholder=" " value="საქართველოს ბანკი">
+                            <span>ბანკის დასახელება</span>
+                        </label>
+                    </div>
+                    <div class="half-field">
+                        <label class="pure-material-textfield-outlined">
+                            <input placeholder=" " value="ბანკის კოდი">
+                            <span>ბანკის კოდი</span>
+                        </label>
+                        <label class="pure-material-textfield-outlined">
+                            <input placeholder=" " value="ანგარიშის ნომერი">
+                            <span>ანგარიშის ნომერი</span>
+                        </label>
+                    </div>
+                    <label class="pure-material-textfield-outlined">
+                        <input placeholder=" " value="ინვოისი N 1135 -ს დაფარვა">
+                        <span>დანიშნულება</span>
+                    </label>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="button blue-fill-btn" data-toggle="modal"
+                        data-target="#success">გადახდა</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="success">
+        <div class="modal-dialog modal-dialog-centered lit-w-modal">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"><img src="img/modal-close.svg" alt="Close"></span>
+                </button>
+                <div class="modal-body">
+                    <div class="info-popup-img success-icon"><img src="img/tick.svg" alt="Check"></div>
+                    <div class="info-popup-text">
+                        მოთხოვნა წარმატებით შესრულდა
+                        <span>ინვოისი გადახდილია</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal full-size-xs" id="funding-history">
+        <div class="modal-dialog modal-dialog-centered big-w-modal big-lit-modal">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"><img src="img/modal-close.svg" alt="Close"></span>
+                </button>
+                <div class="modal-header">
+                    <h5 class="modal-title">დაფინანსების ისტორია</h5>
+                </div>
+                <div class="modal-body">
+                    <div class="fund-hist-block">
+                        <div>
+                            <h3>დაფინანსების თარიღი</h3>
+                            <div>
+                                09 აგვისტო 2019
+                            </div>
+                        </div>
+                        <div>
+                            <h3>დაფინანსებული თანხა</h3>
+                            <div>70 000 GEL</div>
+                        </div>
+                    </div>
+                    <div class="fund-hist-block">
+                        <div>
+                            <h3>გადახდის თარიღი</h3>
+                            <div>
+                                09 მარტი 2019
+                            </div>
+                            <div>
+                                09 მარტი 2019
+                            </div>
+                            <div>
+                                09 მარტი 2019
+                            </div>
+                            <div>
+                                09 მარტი 2019
+                            </div>
+                        </div>
+                        <div>
+                            <h3>გადახდილი თანხა</h3>
+                            <div>12 000 GEL</div>
+                            <div>12 000 GEL</div>
+                            <div>12 000 GEL</div>
+                            <div>12 000 GEL</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section>
+        <div class="main-container d-md-flex">
+            <div class="left-bar">
+                <img src="img/logo.svg" alt="Logo" class="logo">
+                <div class="main-links d-flex flex-column">
+                    <ul>
+                        <li class="active-m-link">
+                            <!-- for active link  class="active-m-link" -->
+                            <a href="main.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20.002" height="20"
+                                    viewBox="0 0 20.002 20">
+                                    <path style="fill:#c3d8d7;"
+                                        d="M21.221,3h-5.37A1.754,1.754,0,0,0,14.1,4.756V9.022a1.754,1.754,0,0,0,1.753,1.756h5.37a1.754,1.754,0,0,0,1.753-1.756V4.756A1.754,1.754,0,0,0,21.221,3ZM10.369,3H4.513A1.511,1.511,0,0,0,3,4.512v6.976A1.511,1.511,0,0,0,4.513,13h5.856a1.511,1.511,0,0,0,1.51-1.512V4.512A1.511,1.511,0,0,0,10.369,3ZM21.346,13H15.726A1.629,1.629,0,0,0,14.1,14.63v6.74A1.629,1.629,0,0,0,15.726,23h5.621a1.629,1.629,0,0,0,1.628-1.63V14.63A1.629,1.629,0,0,0,21.346,13ZM9.953,15.191H4.867a1.9,1.9,0,0,0-1.9,1.9v3.982a1.9,1.9,0,0,0,1.9,1.9H9.953a1.9,1.9,0,0,0,1.9-1.9V17.089A1.9,1.9,0,0,0,9.953,15.191Z"
+                                        transform="translate(-2.972 -3)" />
+                                </svg>
+                                მთავარი გვერდი
+                            </a>
+                        </li>
+                        <li>
+                            <a class="accordion-heading" data-toggle="collapse" data-target="#portfolio">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21">
+                                    <g transform="translate(0)">
+                                        <path style="fill: #fff;"
+                                            d="M22.344,9.011,16.978,3.644A2.22,2.22,0,0,0,15.411,3H5.222A2.229,2.229,0,0,0,3,5.222V21.778A2.229,2.229,0,0,0,5.222,24H20.778A2.229,2.229,0,0,0,23,21.778V10.589A2.229,2.229,0,0,0,22.344,9.011Z"
+                                            transform="translate(-3 -3)" />
+                                        <path style="fill:#387d7a !important;"
+                                            d="M11.185,11.816a1.079,1.079,0,1,1,0,2.157H7.93a1.079,1.079,0,1,1,0-2.157Z"
+                                            transform="translate(-1.207 -4.596)" />
+                                        <path style="fill:#387d7a !important;"
+                                            d="M14.627,11.863a1.079,1.079,0,1,1,0,2.157H7.914a1.079,1.079,0,1,1,0-2.157Z"
+                                            transform="translate(-1.207 0.404)" />
+                                    </g>
+                                </svg>
+                                პორტფელი
+                            </a>
+                            <ul class="sub-menu collapse" id="portfolio">
+                                <li>
+                                    <a href="" class="active-sub-menu">მიმოხილვა</a>
+                                </li>
+                                <li>
+                                    <a href="">ინვოისები</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="accordion-heading" data-toggle="collapse" data-target="#investment">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="21.557" height="23"
+                                    viewBox="0 0 21.557 23">
+                                    <path style="fill: #fff;"
+                                        d="M79.877,4.522C81.735,3.077,81.712.22,80.948.078c-1.015-.189-3.628.6-4.694.749C74.743,1,72.345-.653,71.421.287c-.751.764-.485,3.024,1.533,4.235-6.777,1.172-13.822,18.67,3.3,18.472S86.886,6.34,79.877,4.522Z"
+                                        transform="translate(-65.589 0.004)" />
+                                    <path style="fill: #5976f0;"
+                                        d="M10.366,7.646c-1.447-.363-2-.529-2-1.113,0-.67.815-.848,1.394-.848s1.094.129,1.26.658a.92.92,0,0,0,1.182.614.9.9,0,0,0,.723-.979,2.859,2.859,0,0,0-1.968-1.931V3.616c0-.51-.667-.922-1.2-.922s-1.19.412-1.19.922v.431A2.637,2.637,0,0,0,6.3,6.532c0,1.42.951,2.291,3,2.8,1.594.369,1.868.744,1.868,1.232s-.215.8-1.624.8A1.7,1.7,0,0,1,8.1,10.479a1,1,0,0,0-1.568-.122.91.91,0,0,0-.172,1.007,3.013,3.013,0,0,0,2.21,1.628v.458c0,.51.661.907,1.19.907s1.2-.455,1.2-.966v-.4a2.615,2.615,0,0,0,2.3-2.431c0-1.746-1.445-2.552-2.892-2.914Z"
+                                        transform="translate(0.775 5.006)" />
+                                </svg>
+                                ინვესტირება
+                            </a>
+                            <ul class="sub-menu collapse" id="investment">
+                                <li>
+                                    <a href="" class="active-sub-menu">მიმდინარე აუქციონები</a>
+                                </li>
+                                <li>
+                                    <a href="">აუქციონების ისტორია</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="logout-btn"><img src="img/logout.svg" alt="Logout"> გასვლა</div>
+            </div>
+            <div class="right-bar limits-container inv-num-cont">
+                <div class="right-bar-header">
+                    <h1 class="not-for-responsive">ინვოისი N 2135</h1>
+                    <div class="burger-menu only-for-responsive"><img src="img/menu.svg" alt="Burger"></div>
+                    <div class="d-flex align-items-center">
+                        <div class="settings-icon">
+                            <img src="img/settings.svg" alt="Settings">
+                            <div class="settings-dropdown">
+                                <a href="parameters.html">პროფილის რედაქტირება</a>
+                                <div>English</div>
+                                <a href="">ფაქტორინგი</a>
+                            </div>
+                        </div>
+                        <div class="h-notification">
+                            <a href="notifications.html"><img src="img/notification.svg" alt="Notification"></a>
+                            <div class="notification-alarm"></div> <!-- if exist unread notification -->
+                            <div class="notification-container-outside">
+                                <!-- notification container -->
+                                <div class="notification-container">
+                                    <h2>შეტყობინებები</h2>
+                                    <div>
+                                        <a href="notification-details.html" class="notification-block">
+                                            <h3>გამოქვეყნებული ინვოისი</h3>
+                                            <div class="notification-date">25 აპრ 2019</div>
+                                            <div>
+                                                შემთხვევითად გენერირებული ტექსტი ეხმარება დიზაინერებს დატ..
+                                            </div>
+                                        </a>
+                                        <div class="notification-block unread-message">
+                                            <!-- class for unread message ... class="unread-message"-->
+                                            <h3>გამოქვეყნებული ინვოისი</h3>
+                                            <div class="notification-date">25 აპრ 2019</div>
+                                            <div>
+                                                შემთხვევითად გენერირებული ტექსტი ეხმარება დიზაინერებს დატ..
+                                            </div>
+                                        </div>
+                                        <a href="notification-details.html" class="notification-block">
+                                            <h3>გამოქვეყნებული ინვოისი</h3>
+                                            <div class="notification-date">25 აპრ 2019</div>
+                                            <div>
+                                                შემთხვევითად გენერირებული ტექსტი ეხმარება დიზაინერებს დატ..
+                                            </div>
+                                        </a>
+                                        <a href="notification-details.html" class="notification-block">
+                                            <h3>გამოქვეყნებული ინვოისი</h3>
+                                            <div class="notification-date">25 აპრ 2019</div>
+                                            <div>
+                                                შემთხვევითად გენერირებული ტექსტი ეხმარება დიზაინერებს დატ..
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <a href="notifications.html" class="notf-see-more">ყველას ნახვა</a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="main.html" class="h-logo"><img src="img/lit-logo.svg" alt="Logo"></a>
+                    </div>
+                </div>
+                <div class="right-bar-body">
+                    <h1 class="only-for-responsive">ინვოისი N 2135</h1>
+                    <div class="lit-boxes row">
+                        <div class="col-md-6 lit-col">
+                            <div class="lit-box-block">
+                                <div class="d-flex align-items-center position-relative h-100">
+                                    <img src="img/invoice-price.svg" alt="Invoice" class="invoice-price-img">
+                                    <div>
+                                        <h2>ინვოისის ღირებულება</h2>
+                                        <div class="inv-price">500 000 <span>GEL</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 lit-col">
+                            <div class="lit-box-block">
+                                <h2 class="only-for-xs">დაფინანსების ისტორია</h2>
+                                <div class="d-flex position-relative limit-requirement">
+                                    <div class="doughnut-chart-container">
+                                        <canvas id="usersChart" width="1" height="1"></canvas>
+                                        <div class="chart-text only-for-md not-for-xs">70 000 <div>სულ</div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h2 class="not-for-xs">დაფინანსების ისტორია</h2>
+                                        <div class="lit-left-txt purp dots">
+                                            გადასახდელია <span>90 000 <span>GEL</span></span>
+                                        </div>
+                                        <div class="lit-left-txt green dots">
+                                            გადახდილი <span>30 000 <span>GEL</span></span>
+                                        </div>
+                                        <div class="lit-left-txt last-txt blue dots">
+                                            ვადაგასული <span>60 000 <span>GEL</span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="company-container full-comp-cont row">
+                        <div class="col-md-6">
+                            <div class="shadow-content">
+                                <div class="accordion-h only-for-xs" data-toggle="collapse" data-target="#selling-company">
+                                    <h2>გამყიდველი კომპანია</h2>
+                                    <div class="triangle"></div>
+                                </div>
+                                <h2 class="not-for-xs">გამყიდველი კომპანია</h2>
+                                <div class=" collapse show" id="selling-company">
+                                    <div class="company-name">
+                                        <h3>დასახელება</h3>
+                                        <div>ელექტრონულ ფაქტორინგული კომპანია</div>
+                                    </div>
+                                    <div class="company-txt">
+                                        <div>
+                                            <h3>საიდენთიფიკაციო კოდი</h3>
+                                            <div>029383930003</div>
+                                        </div>
+                                        <div>
+                                            <h3>საქმიანობა</h3>
+                                            <div>საბითუმო და საცალო ვაჭრობა</div>
+                                        </div>
+                                        <div>
+                                            <h3>საქმიანობის პერიოდი</h3>
+                                            <div>1-დან 5 წლამდე</div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="shadow-content">
+                                <div class="accordion-h only-for-xs" data-toggle="collapse" data-target="#buying-company">
+                                    <h2>მყიდველი კომპანია</h2>
+                                    <div class="triangle"></div>
+                                </div>
+                                <h2 class="not-for-xs">მყიდველი კომპანია</h2>
+                                <div class="collapse show" id="buying-company">
+                                    <div class="company-name">
+                                        <h3>დასახელება</h3>
+                                        <div>სარწყავი სისტემის წყალმომხმარებელთა სამელიორაციო მომსახურეობის კოოპერატივი
+                                            დოესი</div>
+                                    </div>
+                                    <div class="company-txt">
+                                        <div>
+                                            <h3>საიდენთიფიკაციო კოდი</h3>
+                                            <div>465787980809</div>
+                                        </div>
+                                        <div>
+                                            <h3>საქმიანობა</h3>
+                                            <div>საბითუმო და საცალო ვაჭრობა</div>
+                                        </div>
+                                        <div>
+                                            <h3>საქმიანობის პერიოდი</h3>
+                                            <div>1-დან 3 წლამდე</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="inv-num">
+                        <div class="shadow-content">
+                            <div class="accordion-h only-for-xs" data-toggle="collapse" data-target="#invoice-info">
+                                <h2>ინვოისის ინფორმაცია</h2>
+                                <div class="triangle"></div>
+                            </div>
+                            <h2 class="not-for-xs">ინვოისის ინფორმაცია</h2>
+                            <div class="collapse show" id="invoice-info">
+                                <div class="l-inside-block">
+                                    <div>
+                                        <div class="l-inside-left">ინვოისის ნომერი</div>
+                                        <div class="l-inside-right">2343</div>
+                                    </div>
+                                </div>
+                                <div class="l-inside-block">
+                                    <div>
+                                        <div class="l-inside-left">დაწყების თარიღი</div>
+                                        <div class="l-inside-right">03 სექტემბერი 2020</div>
+                                    </div>
+                                    <div>
+                                        <div class="l-inside-left">დასრულების თარიღი</div>
+                                        <div class="l-inside-right">23 სექტემბერი 2020</div>
+                                    </div>
+                                    <div>
+                                        <div class="l-inside-left">დაფინანსების პერიოდი</div>
+                                        <div class="l-inside-right">20 დღე</div>
+                                    </div>
+                                </div>
+                                <div class="l-inside-block">
+                                    <div>
+                                        <div class="l-inside-left">წინასწარ დასაფინანსებელი</div>
+                                        <div class="l-inside-right">60 000 gel</div>
+                                    </div>
+                                    <div>
+                                        <div class="l-inside-left">დისკონტი</div>
+                                        <div class="l-inside-right">20 000 gel</div>
+                                    </div>
+                                    <div>
+                                        <div class="l-inside-left">დაფინანსების ნაშთი</div>
+                                        <div class="l-inside-right">8 000 gel</div>
+                                    </div>
+                                </div>
+                                <div class="l-inside-block">
+                                    <div>
+                                        <div class="l-inside-left">ფაქტორინგის ტიპი</div>
+                                        <div class="l-inside-right">ინვოისის ფინანსირება</div>
+                                    </div>
+                                </div>
+                                <div class="l-inside-block">
+                                    <div>
+                                        <div class="l-inside-left">სტატუსი</div>
+                                        <div class="l-inside-right td-status active">აქტიური</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="line-reponsive"></div>
+                        <div class="shadow-content">
+                            <div class="accordion-h only-for-xs" data-toggle="collapse" data-target="#products">
+                                <h2>პროდუქტები</h2>
+                                <div class="triangle"></div>
+                            </div>
+                            <h2 class="not-for-xs">პროდუქტები</h2>
+                            <div class="collapse show" id="products">
+                                <div class="l-inside-block">
+                                    <div>
+                                        <div class="l-inside-left">დასახელება</div>
+                                        <div class="l-inside-right">პროდუქტის სახელი</div>
+                                    </div>
+                                    <div>
+                                        <div class="l-inside-left">რაოდენობა</div>
+                                        <div class="l-inside-right">40 ერთეული</div>
+                                    </div>
+                                    <div>
+                                        <div class="l-inside-left">ერთეულის ფასი</div>
+                                        <div class="l-inside-right">200 gel</div>
+                                    </div>
+                                    <div>
+                                        <div class="l-inside-left">ჯამური ღირებულება</div>
+                                        <div class="l-inside-right">8 000 gel</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <script>
+
+        // round corners
+        Chart.pluginService.register({
+            afterUpdate: function (chart) {
+                if (chart.config.options.elements.arc.roundedCornersFor !== undefined) {
+                    var arc = chart.getDatasetMeta(0).data[chart.config.options.elements.arc.roundedCornersFor];
+                    arc.round = {
+                        x: (chart.chartArea.left + chart.chartArea.right) / 2,
+                        y: (chart.chartArea.top + chart.chartArea.bottom) / 2,
+                        radius: (chart.outerRadius + chart.innerRadius) / 2,
+                        thickness: (chart.outerRadius - chart.innerRadius) / 2 - 1,
+                        backgroundColor: arc._model.backgroundColor
+                    }
+                }
+            },
+
+            afterDraw: function (chart) {
+                if (chart.config.options.elements.arc.roundedCornersFor !== undefined) {
+                    var ctx = chart.chart.ctx;
+                    var arc = chart.getDatasetMeta(0).data[chart.config.options.elements.arc.roundedCornersFor];
+                    var startAngle = Math.PI / 2 - arc._view.startAngle;
+                    var endAngle = Math.PI / 2 - arc._view.endAngle;
+
+                    ctx.save();
+                    ctx.translate(arc.round.x, arc.round.y);
+                    console.log(arc.round.startAngle)
+                    ctx.fillStyle = arc.round.backgroundColor;
+                    ctx.beginPath();
+                    ctx.arc(arc.round.radius * Math.sin(startAngle), arc.round.radius * Math.cos(startAngle), arc.round.thickness, 0, 2 * Math.PI);
+                    ctx.arc(arc.round.radius * Math.sin(endAngle), arc.round.radius * Math.cos(endAngle), arc.round.thickness, 0, 2 * Math.PI);
+                    ctx.closePath();
+                    ctx.fill();
+                    ctx.restore();
+                }
+            },
+        });
+
+        var config = {
+            type: 'doughnut',
+            data: {
+                datasets: [{
+                    borderWidth: 0,
+                    data: [67, 33],
+                    backgroundColor: [
+                        "#28A5A0",
+                        "#F5F7FF"
+                    ],
+                    hoverBackgroundColor: [
+                        "#28A5A0",
+                        "#F5F7FF"
+                    ]
+                }]
+            },
+            options: {
+                tooltips: {
+                    enabled: false
+                },
+                aspectRatio: 1,
+                cutoutPercentage: 85,
+                animation: {
+                    duration: 0
+                },
+                elements: {
+                    arc: {
+                        roundedCornersFor: 0,
+                    }
+                }
+            }
+        };
+
+
+        Chart.defaults.RoundedDoughnut = Chart.helpers.clone(Chart.defaults.doughnut);
+        Chart.controllers.RoundedDoughnut = Chart.controllers.doughnut.extend({
+            draw: function (ease) {
+                var ctx = this.chart.ctx;
+                var easingDecimal = ease || 1;
+                var arcs = this.getMeta().data;
+                Chart.helpers.each(arcs, function (arc, i) {
+                    arc.transition(easingDecimal).draw();
+
+                    var pArc = arcs[i === 0 ? arcs.length - 1 : i - 1];
+                    var pColor = pArc._view.backgroundColor;
+
+                    var vm = arc._view;
+                    var radius = (vm.outerRadius + vm.innerRadius) / 2;
+                    var thickness = (vm.outerRadius - vm.innerRadius) / 2;
+                    var startAngle = Math.PI - vm.startAngle - Math.PI / 2;
+                    var angle = Math.PI - vm.endAngle - Math.PI / 2;
+
+                    ctx.save();
+                    ctx.translate(vm.x, vm.y);
+
+                    ctx.fillStyle = i === 0 ? vm.backgroundColor : pColor;
+                    ctx.beginPath();
+                    ctx.arc(radius * Math.sin(startAngle), radius * Math.cos(startAngle), thickness, 0, 2 * Math.PI);
+                    ctx.fill();
+
+                    ctx.fillStyle = vm.backgroundColor;
+                    ctx.beginPath();
+                    ctx.arc(radius * Math.sin(angle), radius * Math.cos(angle), thickness, 0, 2 * Math.PI);
+                    ctx.fill();
+
+                    ctx.restore();
+                });
+            }
+        });
+
+        window.onload = function () {
+            new Chart(document.getElementById('usersChart'), {
+                type: 'RoundedDoughnut',
+                data: {
+                    datasets: [
+                        {
+                            data: [40, 20, 20,],
+                            backgroundColor: [
+                                '#5976F0',
+                                '#38D9D3',
+                                '#7545E0'
+                            ],
+                            borderWidth: 0
+                        }]
+                },
+                options: {
+                    cutoutPercentage: 85
+                }
+            });
+        };
+
+        $('.remove-document').on('click', function () {
+            $(this).parents('.document-cont').html('არ არის ატვირთული');
+        });
+        $("#success").on('show.bs.modal', function (e) {
+            $("#exampleModalCenter").modal("hide");
+            $('body').removeClass('header-change');
+        });
+
+        $(".full-size-xs").on('show.bs.modal', function (e) {
+            if ($('.modal-dialog').hasClass('big-w-modal')) {
+                $('body').addClass('header-change');
+            }
+        });
+    </script>
+</body>
+
+</html>

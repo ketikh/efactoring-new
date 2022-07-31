@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/select2.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/jquery-3.1.0.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/chart.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/select2.min.js"></script>
+    <title>efactroring</title>
+</head>
+
+<body>
+    <div class="overlay"></div>
+    <header>
+        <div class="h-top">
+            <a href="">
+                <img src="img/colored-logo.svg" alt="Logo" class="blue-logo">
+                <img src="img/logo-green.svg" alt="Logo" class="green-logo">
+                <img src="img/mini-blue-logo.svg" alt="Logo" class="mini-blue-logo">
+                <img src="img/mini-logo-green.svg" alt="Logo" class="mini-green-logo">
+            </a>
+            <div class="right-side">
+                <a href="" class="site-link">efactoring.ge</a>
+                <div class="lang-switcher">
+                    <a class="accordion-heading" data-toggle="collapse" data-target="#language">
+                        English
+                    </a>
+                    <ul class="sub-menu collapse" id="language">
+                        <li>
+                            <a href="" class="">English</a>
+                        </li>
+                        <li>
+                            <a href="">ქართული</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        <div class="h-switcher">
+            <label class="main-switcher switch">
+                <input type="checkbox" checked>
+                <span class="slider round"></span>
+                <span class="checked-factoring check-span">ფაქტორინგი</span>
+                <span class="checked-investor check-span">ინვესტორი</span>
+            </label>
+        </div>
+    </header>
+    <section>
+        <div class="auth-container">
+            <h2>ავტორიზაცია</h2>
+            <label class="pure-material-textfield-outlined">
+                <input placeholder=" ">
+                <span>მომხმარებლის სახელი</span>
+            </label>
+            <label class="pure-material-textfield-outlined password-field">
+                <input type="password" placeholder=" " value="">
+                <span>პაროლი</span>
+                <img src="img/line-eye.svg" alt="Eye" class="show-pass eye">
+                <img src="img/eye.svg" alt="Eye" class="hide-pass eye">
+            </label>
+            <div class="remember-cont">
+                <label class="custom-label cust-check">
+                    დამიმახსოვრე
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+                <a href="reset-pass.html">დაგავიწყდა პაროლი?</a>
+            </div>
+            <button class="button blue-fill-btn">შესვლა</button>
+            <div class="bottom-line">არ ხარ მომხმარებელი? <a href="registration.html">რეგისტრაცია</a></div>
+        </div>
+    </section>
+
+    <script>
+        $('.show-pass').on('click', function () {
+            $(this).parents('.password-field').find('input').prop('type', 'text');
+            $(this).hide();
+            $(this).next('.hide-pass').show();
+        });
+
+        $('.hide-pass').on('click', function () {
+            $(this).parents('.password-field').find('input').prop('type', 'password');
+            $(this).hide();
+            $(this).prev('.show-pass').show();
+        });
+
+        $('.main-switcher input').change(function () {
+            $('body').toggleClass('factoring-mode');
+        });
+
+    </script>
+</body>
+
+</html>
