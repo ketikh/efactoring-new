@@ -3341,8 +3341,8 @@ header .h-switcher {
     color: #9C9CA6;
 }
 
-section {
-    padding-bottom: 160px;
+.auth-container {
+    margin-bottom: 160px;
 }
 
 .site-link {
@@ -3664,6 +3664,10 @@ label.pure-material-textfield-outlined.half-field {
 
 body.factoring-mode .sms-code svg path {
     stroke: #28A5A0 !important;
+}
+
+.without-border {
+    border: none;
 }
 /* right bar end */
 
@@ -4576,8 +4580,8 @@ body.factoring-mode .sms-code svg path {
         font-size: 14px;
     }
 
-    section {
-        padding-bottom: 62px;
+    .auth-container {
+        margin-bottom: 62px;
     }
 
     .without-bg h2 {
@@ -5878,8 +5882,8 @@ body.factoring-mode .sms-code svg path {
         margin-right: 20px;
     }
 
-    section {
-        padding-bottom: 55px;
+    .auth-container {
+        margin-bottom: 55px;
     }
 
     .auth-container {
