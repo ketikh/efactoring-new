@@ -16,18 +16,36 @@
   </head>
   <body>
       <div class="overlay"></div>
+      <div class="modal" id="delete-notification">
+          <div class="modal-dialog modal-dialog-centered lit-w-modal">
+              <div class="modal-content">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true"><img src="img/modal-close.svg" alt="Close"></span>
+                  </button>
+                  <div class="modal-body">
+                      <div class="info-popup-img delete-icon"><img src="img/delete.svg" alt="Trash"></div>
+                      <div class="info-popup-text">
+                          ნამდვილად გსურს წაშლა?  
+                          <span>შეტყობინება წაშლილია</span>
+                      </div>
+                      <div class="button red-fill-btn" data-toggle="modal" data-target="#success-delete-message">წაშლა
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
     <section>
         <div class="main-container d-md-flex">
           <div class="left-bar">
               <img src="img/logo.svg" alt="Logo" class="logo">
               <div class="main-links d-flex flex-column">
                 <ul>
-                    <li class="active-m-link">
+                    <li>
                         <!-- for active link  class="active-m-link" -->
                         <a href="main.html">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20.002" height="20"
                                 viewBox="0 0 20.002 20">
-                                <path style="fill:#c3d8d7;"
+                                <path style="fill:#bcc8f9;"
                                     d="M21.221,3h-5.37A1.754,1.754,0,0,0,14.1,4.756V9.022a1.754,1.754,0,0,0,1.753,1.756h5.37a1.754,1.754,0,0,0,1.753-1.756V4.756A1.754,1.754,0,0,0,21.221,3ZM10.369,3H4.513A1.511,1.511,0,0,0,3,4.512v6.976A1.511,1.511,0,0,0,4.513,13h5.856a1.511,1.511,0,0,0,1.51-1.512V4.512A1.511,1.511,0,0,0,10.369,3ZM21.346,13H15.726A1.629,1.629,0,0,0,14.1,14.63v6.74A1.629,1.629,0,0,0,15.726,23h5.621a1.629,1.629,0,0,0,1.628-1.63V14.63A1.629,1.629,0,0,0,21.346,13ZM9.953,15.191H4.867a1.9,1.9,0,0,0-1.9,1.9v3.982a1.9,1.9,0,0,0,1.9,1.9H9.953a1.9,1.9,0,0,0,1.9-1.9V17.089A1.9,1.9,0,0,0,9.953,15.191Z"
                                     transform="translate(-2.972 -3)" />
                             </svg>
@@ -53,10 +71,10 @@
                         </a>
                         <ul class="sub-menu collapse" id="portfolio">
                             <li>
-                                <a href="" class="active-sub-menu">მიმოხილვა</a>
+                                <a href="review.html">მიმოხილვა</a>
                             </li>
                             <li>
-                                <a href="">ინვოისები</a>
+                                <a href="invoices.html">ინვოისები</a>
                             </li>
                         </ul>
                     </li>
@@ -75,10 +93,10 @@
                         </a>
                         <ul class="sub-menu collapse" id="investment">
                             <li>
-                                <a href="" class="active-sub-menu">მიმდინარე აუქციონები</a>
+                                <a href="auction-page.html">მიმდინარე აუქციონები</a>
                             </li>
                             <li>
-                                <a href="">აუქციონების ისტორია</a>
+                                <a href="auction-history.html">აუქციონების ისტორია</a>
                             </li>
                         </ul>
                     </li>

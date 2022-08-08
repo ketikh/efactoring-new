@@ -251,7 +251,7 @@ a:visited {
 }
 
 .main-links ul li {
-    padding-left: 59px;
+    padding-left: 0;
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
     margin-bottom: 13px;
@@ -278,7 +278,9 @@ a:visited {
     text-decoration: none;
     display: flex;
     align-items: center;
-    padding: 11px 0;
+    padding: 11px 0 11px 59px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
     transition: all .2s ease-in-out;
 }
 
@@ -303,7 +305,7 @@ a:visited {
 .main-links .sub-menu li a {
     padding: 10px 0 10px 59px;
     font-size: 14px;
-    color: #AFBBBC;
+    color: #BCC8F9;
     font-family: 'BPGBanner';
 }
 
@@ -316,17 +318,18 @@ a:visited {
     transition: all .2s ease-in-out;
 }
 
-.active-m-link {
-    background: #5976F0;
-}
-
-.active-m-link a {
+a.active-m-link {
     color: #fff;
+    background: #5976F0;
 }
 
 .active-m-link svg path,
 .active-m-link svg circle {
     fill: #fff !important;
+}
+
+.active-m-link svg.investment path:nth-child(2) {
+    fill: #5976F0 !important;
 }
 
 .logout-btn {
@@ -336,6 +339,8 @@ a:visited {
     display: flex;
     align-items: center;
     cursor: pointer;
+    position: absolute;
+    bottom: 80px;
 }
 
 .logout-btn img {
@@ -351,6 +356,8 @@ a:visited {
     /* width: 100%; */
     padding: 45px 45px 50px 15px;
     background: #FCFCFD;
+    height: 100vh;
+    overflow: auto;
 }
 
 .right-bar-header {
@@ -1613,7 +1620,7 @@ input {
 }
 
 .notf-inside-h .notf-set {
-    position: static;
+    position: relative;
     margin-bottom: 10px;
 }
 
@@ -2385,7 +2392,7 @@ div.peop-small-td {
     background: #5976F0;
 }
 
-.lit-left-txt.green:before {
+.lit-left-txt.green-af:before {
     background: #38D9D3;
 }
 
@@ -3298,6 +3305,10 @@ header .h-switcher {
     padding: 80px;
 }
 
+.auth-block .auth-container {
+    position: relative;
+}
+
 .auth-container h2 {
     font-size: 30px;
     text-align: center;
@@ -3341,8 +3352,8 @@ header .h-switcher {
     color: #9C9CA6;
 }
 
-.auth-container {
-    margin-bottom: 160px;
+.auth-reg {
+    padding-bottom: 160px;
 }
 
 .site-link {
@@ -3668,6 +3679,49 @@ body.factoring-mode .sms-code svg path {
 
 .without-border {
     border: none;
+}
+
+.auth-block .dots-pattern {
+    position: absolute;
+    right: 67%;
+    bottom: -60px;
+    z-index: -1;
+}
+
+.pattern-blue {
+    display: block;
+}
+
+.pattern-green {
+    display: none;
+}
+
+body.factoring-mode .pattern-blue {
+    display: none;
+}
+
+body.factoring-mode .pattern-green {
+    display: block;
+}
+
+.dots-corner .dots-pattern {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.dots-corner {
+    position: relative;
+}
+
+.registration-block .auth-container {
+    position: relative;
+}
+
+.registration-block .dots-pattern {
+    position: absolute;
+    left: -85%;
+    bottom: 120px;
 }
 /* right bar end */
 
@@ -4066,9 +4120,9 @@ body.factoring-mode .sms-code svg path {
         margin-bottom: 40px;
     }
 
-    .left-bar .main-links ul li {
+    /* .left-bar .main-links ul li {
         padding-left: 50px;
-    }
+    } */
 
     .main-links a svg {
         height: 18px;
@@ -4077,7 +4131,7 @@ body.factoring-mode .sms-code svg path {
 
     .main-links a {
         font-size: 12px;
-        padding: 16px 0;
+        padding: 16px 0 16px 50px;
     }
 
     .main-links .sub-menu li a {
@@ -4135,6 +4189,10 @@ body.factoring-mode .sms-code svg path {
     .notf-set .mail {
         margin-right: 0;
         margin-left: 30px;
+    }
+
+    .notf-tooltip:after {
+        right: 6px;
     }
 
     .notf-main .table-filter-btn {
@@ -4580,8 +4638,8 @@ body.factoring-mode .sms-code svg path {
         font-size: 14px;
     }
 
-    .auth-container {
-        margin-bottom: 62px;
+    .auth-reg {
+        padding-bottom: 62px;
     }
 
     .without-bg h2 {
@@ -4590,6 +4648,12 @@ body.factoring-mode .sms-code svg path {
 
     .without-bg .sub-title {
         font-size: 12px;
+    }
+
+    .dots-pattern {
+        width: 290px;
+        right: 68%;
+        bottom: -74px;
     }
 }
 
@@ -5882,8 +5946,8 @@ body.factoring-mode .sms-code svg path {
         margin-right: 20px;
     }
 
-    .auth-container {
-        margin-bottom: 55px;
+    .auth-reg {
+        padding-bottom: 55px;
     }
 
     .auth-container {
@@ -5920,5 +5984,9 @@ body.factoring-mode .sms-code svg path {
 
     label.pure-material-textfield-outlined.half-field {
         width: calc(50% - 7px);
+    }
+
+    .dots-pattern {
+        display: none !important;
     }
 }
