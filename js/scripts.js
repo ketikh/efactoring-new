@@ -57,6 +57,46 @@ $(document).ready(function() {
     $("#success-delete-message").on('show.bs.modal', function (e) {
         $("#delete-notification").modal("hide");
     });
+
+
+    $('.show-pass').on('click', function () {
+        $(this).parents('.password-field').find('input').prop('type', 'text');
+        $(this).hide();
+        $(this).next('.hide-pass').show();
+    });
+
+    $('.hide-pass').on('click', function () {
+        $(this).parents('.password-field').find('input').prop('type', 'password');
+        $(this).hide();
+        $(this).prev('.show-pass').show();
+    });
+
+
+    function readfileURL(input) {
+        if (input.files && input.files[0]) {
+
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('.input-upload').hide();
+                $('.input-file-upload-btn').hide();
+                $('.inp-cont').html(input.files[0].name);
+                $('.input-upload-container').css('display', 'flex');
+            };
+
+            reader.readAsDataURL(input.files[0]);
+
+        } else {
+            removeFileUpload();
+        }
+    }
+
+    function removeFileUpload() {
+        $('.input-upl').replaceWith($('.input-upl').clone());
+        $('.input-upload-container').hide();
+        $('.input-upload').show();
+        $('.input-file-upload-btn').show();
+    }
 });
 
 function showOverlay() {

@@ -18,23 +18,6 @@
 
 <body>
     <div class="overlay"></div>
-
-    <div class="modal" id="warning">
-        <div class="modal-dialog modal-dialog-centered lit-w-modal">
-            <div class="modal-content">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true"><img src="img/modal-close.svg" alt="Close"></span>
-                </button>
-                <div class="modal-body">
-                    <div class="info-popup-img warning-icon"><img src="img/warning.svg" alt="warning"></div>
-                    <div class="info-popup-text">
-                        დაფიქსირდა შეცდომა
-                        <span>სცადე ხელახლა</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="modal" id="success">
       <div class="modal-dialog modal-dialog-centered lit-w-modal">
         <div class="modal-content">
@@ -112,7 +95,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="logout-btn"><img src="img/logout.svg" alt="Logout"> გასვლა</div>
+                <a href="auth.html" class="logout-btn"><img src="img/logout.svg" alt="Logout"> გასვლა</a>
             </div>
             <div class="right-bar param-container">
                 <div class="right-bar-header">
@@ -287,73 +270,6 @@
             </div>
         </div>
     </section>
-
-    <script>
-
-        function readURL(input) {
-            if (input.files && input.files[0]) {
-
-                var reader = new FileReader();
-
-                reader.onload = function (e) {
-                    $('.image-upload-wrap').hide();
-                    $('.file-upload-image').attr('style', "background-image: url(" + e.target.result) + ")";
-                    $('.file-upload-content').show();
-
-                    //   $('.image-title').html(input.files[0].name);
-                };
-
-                reader.readAsDataURL(input.files[0]);
-
-            } else {
-                removeUpload();
-            }
-        }
-
-        function removeUpload() {
-            $('.file-upload-input').replaceWith($('.file-upload-input').clone());
-            $('.file-upload-content').hide();
-            $('.image-upload-wrap').show();
-        }
-
-        function readfileURL(input) {
-            if (input.files && input.files[0]) {
-
-                var reader = new FileReader();
-
-                reader.onload = function (e) {
-                    $('.input-upload').hide();
-                    $('.input-file-upload-btn').hide();
-                    $('.inp-cont').html(input.files[0].name);
-                    $('.input-upload-container').css('display', 'flex');
-                };
-
-                reader.readAsDataURL(input.files[0]);
-
-            } else {
-                removeFileUpload();
-            }
-        }
-
-        function removeFileUpload() {
-            $('.input-upl').replaceWith($('.input-upl').clone());
-            $('.input-upload-container').hide();
-            $('.input-upload').show();
-            $('.input-file-upload-btn').show();
-        }
-
-        $('.show-pass').on('click', function () {
-            $(this).parents('.password-field').find('input').prop('type', 'text');
-            $(this).hide();
-            $(this).next('.hide-pass').show();
-        });
-
-        $('.hide-pass').on('click', function () {
-            $(this).parents('.password-field').find('input').prop('type', 'password');
-            $(this).hide();
-            $(this).prev('.show-pass').show();
-        });
-    </script>
 </body>
 
 </html>

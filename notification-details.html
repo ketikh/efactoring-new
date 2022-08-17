@@ -26,9 +26,24 @@
                       <div class="info-popup-img delete-icon"><img src="img/delete.svg" alt="Trash"></div>
                       <div class="info-popup-text">
                           ნამდვილად გსურს წაშლა?  
-                          <span>შეტყობინება წაშლილია</span>
                       </div>
                       <div class="button red-fill-btn" data-toggle="modal" data-target="#success-delete-message">წაშლა
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="modal" id="success-delete-message">
+          <div class="modal-dialog modal-dialog-centered lit-w-modal">
+              <div class="modal-content">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true"><img src="img/modal-close.svg" alt="Close"></span>
+                  </button>
+                  <div class="modal-body">
+                      <div class="info-popup-img success-icon"><img src="img/tick.svg" alt="Check"></div>
+                      <div class="info-popup-text">
+                          მოთხოვნა წარმატებით შესრულდა
+                          <span>შეტყობინება წაშლილია</span>
                       </div>
                   </div>
               </div>
@@ -102,7 +117,7 @@
                     </li>
                 </ul>
               </div>
-              <div class="logout-btn"><img src="img/logout.svg" alt="Logout"> გასვლა</div>
+              <a href="auth.html" class="logout-btn"><img src="img/logout.svg" alt="Logout"> გასვლა</a>
           </div>
             <div class="right-bar notificaiton-container">
               <div class="right-bar-header">

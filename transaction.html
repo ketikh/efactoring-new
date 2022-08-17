@@ -22,15 +22,15 @@
 
 <body>
     <div class="overlay"></div>
-
-    <div class="modal full-size-xs" id="exampleModalCenter">
+    <div class="modal full-size-xs" id="invoice">
         <div class="modal-dialog modal-dialog-centered big-w-modal">
             <div class="modal-content">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true"><img src="img/modal-close.svg" alt="Close"></span>
                 </button>
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">ინვოისის დაფარვა</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">ანგარიშის შევსება
+                    </h5>
                 </div>
                 <div class="modal-body">
                     <div class="select-cont">
@@ -71,73 +71,60 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="button blue-fill-btn" data-toggle="modal"
-                        data-target="#success">გადახდა</button>
+                        data-target="#success">შევსება</button>
                 </div>
             </div>
         </div>
     </div>
-    <div class="modal" id="success">
-        <div class="modal-dialog modal-dialog-centered lit-w-modal">
-            <div class="modal-content">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true"><img src="img/modal-close.svg" alt="Close"></span>
-                </button>
-                <div class="modal-body">
-                    <div class="info-popup-img success-icon"><img src="img/tick.svg" alt="Check"></div>
-                    <div class="info-popup-text">
-                        მოთხოვნა წარმატებით შესრულდა
-                        <span>ინვოისი გადახდილია</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal full-size-xs" id="funding-history">
-        <div class="modal-dialog modal-dialog-centered big-w-modal big-lit-modal">
+    <div class="modal full-size-xs" id="invoice1">
+        <div class="modal-dialog modal-dialog-centered big-w-modal">
             <div class="modal-content">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true"><img src="img/modal-close.svg" alt="Close"></span>
                 </button>
                 <div class="modal-header">
-                    <h5 class="modal-title">დაფინანსების ისტორია</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">ანგარიშის შევსება
+                    </h5>
                 </div>
                 <div class="modal-body">
-                    <div class="fund-hist-block">
-                        <div>
-                            <h3>დაფინანსების თარიღი</h3>
-                            <div>
-                                09 აგვისტო 2019
-                            </div>
-                        </div>
-                        <div>
-                            <h3>დაფინანსებული თანხა</h3>
-                            <div>70 000 GEL</div>
-                        </div>
+                    <div class="select-cont">
+                        <select class="js-example-basic-single" name="state">
+                            <option value=""></option>
+                            <option value="1">ინვოისი N 1135 - ინვოისის თანხა 40 000 gel / გადასახდელი 20 000 gel
+                            </option>
+                            <option value="2">უარყოფილი</option>
+                            <option value="3">პროცესში</option>
+                            <option value="4">დახურული</option>
+                        </select>
+                        <label class="select-label">აირჩიე დასაფარი ინვოისი</label>
                     </div>
-                    <div class="fund-hist-block">
-                        <div>
-                            <h3>გადახდის თარიღი</h3>
-                            <div>
-                                09 მარტი 2019
-                            </div>
-                            <div>
-                                09 მარტი 2019
-                            </div>
-                            <div>
-                                09 მარტი 2019
-                            </div>
-                            <div>
-                                09 მარტი 2019
-                            </div>
-                        </div>
-                        <div>
-                            <h3>გადახდილი თანხა</h3>
-                            <div>12 000 GEL</div>
-                            <div>12 000 GEL</div>
-                            <div>12 000 GEL</div>
-                            <div>12 000 GEL</div>
-                        </div>
+                    <div class="half-field">
+                        <label class="pure-material-textfield-outlined">
+                            <input placeholder=" ">
+                            <span>დაფარვის თარიღი</span>
+                        </label>
+                        <label class="pure-material-textfield-outlined">
+                            <input placeholder=" ">
+                            <span>ბანკის დასახელება</span>
+                        </label>
                     </div>
+                    <div class="half-field">
+                        <label class="pure-material-textfield-outlined">
+                            <input placeholder=" ">
+                            <span>ბანკის კოდი</span>
+                        </label>
+                        <label class="pure-material-textfield-outlined">
+                            <input placeholder=" ">
+                            <span>ანგარიშის ნომერი</span>
+                        </label>
+                    </div>
+                    <label class="pure-material-textfield-outlined">
+                        <input placeholder=" ">
+                        <span>დანიშნულება</span>
+                    </label>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="button blue-fill-btn">შევსება</button>
                 </div>
             </div>
         </div>
@@ -203,7 +190,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="logout-btn"><img src="img/logout.svg" alt="Logout"> გასვლა</div>
+                <a href="auth.html" class="logout-btn"><img src="img/logout.svg" alt="Logout"> გასვლა</a>
             </div>
             <div class="right-bar limits-container inv-num-cont tr-cont">
                 <div class="right-bar-header">
@@ -282,8 +269,10 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-6 col-md-5 col-sm-6 transaction-col-btn">
-                                        <button class="button blue-fill-btn">შევსება</button>
-                                        <button class="button blue-btn">განაღდება</button>
+                                        <button class="button blue-fill-btn" data-toggle="modal"
+                                        data-target="#invoice">შევსება</button>
+                                        <button class="button blue-btn" data-toggle="modal"
+                                        data-target="#invoice1">განაღდება</button>
                                     </div>
                                 </div>
                             </div>
@@ -363,34 +352,34 @@
                                 <div class="td h-status">სტატუსი</div>
                             </div>
                             <div class="t-body">
-                                <a href="limit-number.html" class="t-lines">
+                                <div class="t-lines">
                                     <div class="td deposit">10 000 GEL</div>
                                     <div class="td">თანხის შეტანა</div>
                                     <div class="td">25 აპრ 2019</div>
                                     <div class="td not-for-xs">25 აპრ 2019</div>
                                     <div class="td td-status active"><span>აქტიური</span></div>
-                                </a>
-                                <a href="limit-number.html" class="t-lines">
+                                </div>
+                                <div class="t-lines">
                                     <div class="td withdraw">28 000 GEL</div>
                                     <div class="td">თანხის გატანა</div>
                                     <div class="td">25 აპრ 2019</div>
                                     <div class="td not-for-xs">25 აპრ 2019</div>
                                     <div class="td td-status rejected"><span>უარყოფილი</span></div>
-                                </a>
-                                <a href="limit-number.html" class="t-lines">
+                                </div>
+                                <div class="t-lines">
                                     <div class="td withdraw">10 000 GEL</div>
                                     <div class="td">თანხის გატანა</div>
                                     <div class="td">25 აპრ 2019</div>
                                     <div class="td not-for-xs">25 აპრ 2019</div>
                                     <div class="td td-status process"><span>პროცესში</span></div>
-                                </a>
-                                <a href="limit-number.html" class="t-lines">
+                                </div>
+                                <div class="t-lines">
                                     <div class="td deposit">28 000 GEL</div>
                                     <div class="td">თანხის შეტანა</div>
                                     <div class="td">25 აპრ 2019</div>
                                     <div class="td not-for-xs">25 აპრ 2019</div>
                                     <div class="td td-status closed"><span>დახურული</span></div>
-                                </a>
+                                </div>
                             </div>
                         </div>
                     </div>

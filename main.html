@@ -19,6 +19,68 @@
 <body>
     <div class="overlay"></div>
 
+    <div class="modal" id="invoice-info">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"><img src="img/modal-close.svg" alt="Close"></span>
+                </button>
+                <div class="modal-body">
+                    <h2>ინვოისის ინფორმაცია</h2>
+                    <div class="invoice-info-modal-cont">
+                        <div class="invinfo-list">
+                            <div>კომპანიის დასახელება</div>
+                            <div>ელექტრონულ ფაქტორინგული კომპანია</div>
+                        </div>
+                        <div class="invinfo-list">
+                            <div>კომპანიის რეიტინგი</div>
+                            <div>AA</div>
+                        </div>
+                    </div>
+                    <div class="invoice-info-modal-cont">
+                        <div class="invinfo-list">
+                            <div>აუქციონის დაწყების თარიღი</div>
+                            <div>03 სექტემბერი 2020</div>
+                        </div>
+                        <div class="invinfo-list">
+                            <div>აუქციონის დასრულების თარიღი</div>
+                            <div>23 სექტემბერი 2020</div>
+                        </div>
+                        <div class="invinfo-list">
+                            <div>დაფინანსების პერიოდი</div>
+                            <div>23 დღე</div>
+                        </div>
+                        <div class="invinfo-list">
+                            <div>პროცენტი</div>
+                            <div>14 %</div>
+                        </div>
+                    </div>
+                    <div class="invoice-info-modal-cont">
+                        <div class="invinfo-list">
+                            <div>დასაფინანსებელი თანხა სულ</div>
+                            <div class="green">60 000<span> GEL</span></div>
+                        </div>
+                        <div class="invinfo-list">
+                            <div>ინვესტორი 1</div>
+                            <div class="green">20 000<span> GEL</span></div>
+                        </div>
+                        <div class="invinfo-list">
+                            <div>ინვესტორი 2</div>
+                            <div class="green">10 000<span> GEL</span></div>
+                        </div>
+                        <div class="invinfo-list">
+                            <div>დასაფინანსებელი დარჩა</div>
+                            <div class="red">30 000<span> GEL</span></div>
+                        </div>
+                    </div>
+                    <div class="invoie-info-modal-f">
+                        <button class="button blue-fill-btn" data-toggle="modal"
+                        data-target="#success">BID</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="modal full-size-xs" id="invoice">
         <div class="modal-dialog modal-dialog-centered big-w-modal">
             <div class="modal-content">
@@ -73,21 +135,6 @@
             </div>
         </div>
     </div>
-    <div class="modal" id="success">
-      <div class="modal-dialog modal-dialog-centered lit-w-modal">
-        <div class="modal-content">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true"><img src="img/modal-close.svg" alt="Close"></span>
-          </button>
-          <div class="modal-body">
-              <div class="info-popup-img success-icon"><img src="img/tick.svg" alt="Check"></div>
-              <div class="info-popup-text">
-                  მოთხოვნა წარმატებით შესრულდა
-              </div>
-          </div>
-        </div>
-      </div>
-    </div>
     <div class="modal full-size-xs" id="invoice1">
         <div class="modal-dialog modal-dialog-centered big-w-modal">
             <div class="modal-content">
@@ -140,6 +187,21 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="modal" id="success">
+      <div class="modal-dialog modal-dialog-centered lit-w-modal">
+        <div class="modal-content">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true"><img src="img/modal-close.svg" alt="Close"></span>
+          </button>
+          <div class="modal-body">
+              <div class="info-popup-img success-icon"><img src="img/tick.svg" alt="Check"></div>
+              <div class="info-popup-text">
+                  მოთხოვნა წარმატებით შესრულდა
+              </div>
+          </div>
+        </div>
+      </div>
     </div>
     <section>
         <div class="main-container d-md-flex">
@@ -202,7 +264,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="logout-btn"><img src="img/logout.svg" alt="Logout"> გასვლა</div>
+                <a href="auth.html" class="logout-btn"><img src="img/logout.svg" alt="Logout"> გასვლა</a>
             </div>
             <div class="right-bar">
                 <div class="right-bar-header">
@@ -487,38 +549,38 @@
                             <div class="td h-status">სტატუსი</div>
                         </div>
                         <div class="t-body">
-                            <a href="invoice-inside61.html" class="t-lines">
+                            <div data-toggle="modal" data-target="#invoice-info" class="t-lines">
                                 <div class="td">N 1135</div>
                                 <div class="td">10 000 GEL</div>
                                 <div class="td">11.8</div>
                                 <div class="td">25 აპრ 2019</div>
                                 <div class="td not-for-xs">25 აპრ 2019</div>
                                 <div class="td td-status active"><span>აქტიური</span></div>
-                            </a>
-                            <a href="invoice-inside61.html" class="t-lines">
+                            </div>
+                            <div data-toggle="modal" data-target="#invoice-info" class="t-lines">
                                 <div class="td">N 1135</div>
                                 <div class="td">10 000 GEL</div>
                                 <div class="td">11.8</div>
                                 <div class="td">25 აპრ 2019</div>
                                 <div class="td not-for-xs">25 აპრ 2019</div>
                                 <div class="td td-status rejected"><span>უარყოფილი</span></div>
-                            </a>
-                            <a href="invoice-inside61.html" class="t-lines">
+                            </div>
+                            <div data-toggle="modal" data-target="#invoice-info" class="t-lines">
                                 <div class="td">N 1135</div>
                                 <div class="td">10 000 GEL</div>
                                 <div class="td">11.8</div>
                                 <div class="td">25 აპრ 2019</div>
                                 <div class="td not-for-xs">25 აპრ 2019</div>
                                 <div class="td td-status process"><span>პროცესში</span></div>
-                            </a>
-                            <a href="invoice-inside61.html" class="t-lines">
+                            </div>
+                            <div data-toggle="modal" data-target="#invoice-info" class="t-lines">
                                 <div class="td">N 1135</div>
                                 <div class="td">10 000 GEL</div>
                                 <div class="td">11.8</div>
                                 <div class="td">25 აპრ 2019</div>
                                 <div class="td not-for-xs">25 აპრ 2019</div>
                                 <div class="td td-status closed"><span>დახურული</span></div>
-                            </a>
+                            </div>
                         </div>
                         <a href="bid-history.html" class="table-see-more only-for-responsive">
                             იხილე ყველა <img src="img/next.svg" alt="Next Arrow">
@@ -612,6 +674,10 @@
 
         $("#success").on('show.bs.modal', function (e) {
             $("#invoice").modal("hide");
+            $('body').removeClass('header-change');
+        });
+        $("#success").on('show.bs.modal', function (e) {
+            $("#invoice-info").modal("hide");
             $('body').removeClass('header-change');
         });
 

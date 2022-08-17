@@ -84,17 +84,6 @@
     </section>
 
     <script>
-        $('.show-pass').on('click', function () {
-            $(this).parents('.password-field').find('input').prop('type', 'text');
-            $(this).hide();
-            $(this).next('.hide-pass').show();
-        });
-
-        $('.hide-pass').on('click', function () {
-            $(this).parents('.password-field').find('input').prop('type', 'password');
-            $(this).hide();
-            $(this).prev('.show-pass').show();
-        });
 
         $('.main-switcher input').change(function () {
             $('body').toggleClass('factoring-mode');

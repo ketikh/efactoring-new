@@ -16,73 +16,6 @@
   </head>
   <body>
       <div class="overlay"></div>
-      <div class="modal full-size-xs" id="exampleModalCenter">
-        <div class="modal-dialog modal-dialog-centered big-w-modal">
-          <div class="modal-content">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true"><img src="img/modal-close.svg" alt="Close"></span>
-            </button>
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">ინვოისის დაფარვა</h5>
-            </div>
-            <div class="modal-body">
-                <div class="select-cont">
-                    <select class="js-example-basic-single" name="state">
-                        <option value=""></option>
-                        <option value="1">ინვოისი N 1135 - ინვოისის თანხა 40 000 gel / გადასახდელი 20 000 gel</option>
-                        <option value="2">უარყოფილი</option>
-                        <option value="3">პროცესში</option>
-                        <option value="4">დახურული</option>
-                    </select>
-                    <label class="select-label">აირჩიე დასაფარი ინვოისი</label>
-                </div>
-                <div class="half-field">
-                    <label class="pure-material-textfield-outlined">
-                        <input placeholder=" " value="23 მაისი 2023">
-                        <span>დაფარვის თარიღი</span>
-                    </label>
-                    <label class="pure-material-textfield-outlined">
-                        <input placeholder=" " value="საქართველოს ბანკი">
-                        <span>ბანკის დასახელება</span>
-                    </label>
-                </div>
-                <div class="half-field">
-                    <label class="pure-material-textfield-outlined">
-                        <input placeholder=" " value="ბანკის კოდი">
-                        <span>ბანკის კოდი</span>
-                    </label>
-                    <label class="pure-material-textfield-outlined">
-                        <input placeholder=" " value="ანგარიშის ნომერი">
-                        <span>ანგარიშის ნომერი</span>
-                    </label>
-                </div>
-                <label class="pure-material-textfield-outlined">
-                    <input placeholder=" " value="ინვოისი N 1135 -ს დაფარვა">
-                    <span>დანიშნულება</span>
-                </label>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="button blue-fill-btn" data-toggle="modal" data-target="#success">გადახდა</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="modal" id="success">
-        <div class="modal-dialog modal-dialog-centered lit-w-modal">
-          <div class="modal-content">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true"><img src="img/modal-close.svg" alt="Close"></span>
-            </button>
-            <div class="modal-body">
-                <div class="info-popup-img success-icon"><img src="img/tick.svg" alt="Check"></div>
-                <div class="info-popup-text">
-                    მოთხოვნა წარმატებით შესრულდა
-                    <span>ინვოისი გადახდილია</span>
-                </div>
-            </div>
-          </div>
-        </div>
-      </div>
     <section>
         <div class="main-container d-md-flex">
             <div class="left-bar">
@@ -144,7 +77,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="logout-btn"><img src="img/logout.svg" alt="Logout"> გასვლა</div>
+                <a href="auth.html" class="logout-btn"><img src="img/logout.svg" alt="Logout"> გასვლა</a>
             </div>
             <div class="right-bar invoice-container inv-cont">
                 <div class="right-bar-header">
@@ -232,14 +165,14 @@
                             </div>
                         <div class="col-md-3 col-6">
                             <label class="pure-material-textfield-outlined">
-                                <input placeholder=" ">
+                                <input type="text" class="datepicker" placeholder=" ">
                                 <span>პერიოდი - დან</span>
                             </label>
                         </div>
                         <div class="col-md-3 col-6">
                             <label class="pure-material-textfield-outlined">
-                                <input placeholder=" ">
-                                <span>პერიოდი - დან</span>
+                                <input type="text" class="datepicker" placeholder=" ">
+                                <span>პერიოდი - მდე</span>
                             </label>
                         </div>
                         <div class="col-md-3 col-12">
@@ -286,7 +219,7 @@
                             <div class="td h-status">სტატუსი</div>
                         </div>
                         <div class="t-body">
-                            <a href="limit-number.html" class="t-lines">
+                            <a href="invoice-inside61.html" class="t-lines">
                                 <div class="td number-td"><span>N</span> 1135</div>
                                 <div class="td not-for-xs">25 აპრ 2019</div>
                                 <div class="td not-for-xs">10 000 GEL</div>
@@ -296,7 +229,7 @@
                                 <div class="td not-for-xs money">10 000.89 GEL</div>
                                 <div class="td td-status active"><span>აქტიური</span></div>
                             </a>
-                            <a href="limit-number.html" class="t-lines">
+                            <a href="invoice-inside61.html" class="t-lines">
                                 <div class="td number-td"><span>N</span> 1135</div>
                                 <div class="td not-for-xs">25 აპრ 2019</div>
                                 <div class="td not-for-xs">10 000 GEL</div>
@@ -306,7 +239,7 @@
                                 <div class="td not-for-xs money">10 000.89 GEL</div>
                                 <div class="td td-status rejected"><span>უარყოფილი</span></div>
                             </a>
-                            <a href="limit-number.html" class="t-lines">
+                            <a href="invoice-inside61.html" class="t-lines">
                                 <div class="td number-td"><span>N</span> 1135</div>
                                 <div class="td not-for-xs">25 აპრ 2019</div>
                                 <div class="td not-for-xs">10 000 GEL</div>
@@ -316,7 +249,7 @@
                                 <div class="td not-for-xs money">10 000.89 GEL</div>
                                 <div class="td td-status process"><span>პროცესში</span></div>
                             </a>
-                            <a href="limit-number.html" class="t-lines">
+                            <a href="invoice-inside61.html" class="t-lines">
                                 <div class="td number-td"><span>N</span> 1135</div>
                                 <div class="td not-for-xs">25 აპრ 2019</div>
                                 <div class="td not-for-xs">10 000 GEL</div>
@@ -352,5 +285,35 @@
             </div>
         </div>
     </section>
+    <script>
+        
+
+    $.datepicker._updateDatepicker_original = $.datepicker._updateDatepicker;
+    $.datepicker._updateDatepicker = function (inst) {
+        $.datepicker._updateDatepicker_original(inst);
+        var afterShow = this._get(inst, 'afterShow');
+        if (afterShow)
+            afterShow.apply((inst.input ? inst.input[0] : null));  // trigger custom callback
+    }
+    $(".datepicker").datepicker({
+        changeMonth: true,
+        changeYear: true,
+        dayNames: ["კვირა", "ორშაბათი", "სამშაბათი", "ოთხშაბათი", "ხუთშაბათი", "პარასკევი", "შაბათი"],
+        monthNames: ["იანვარი", "თებერვალი", "მარტი", "აპრილი", "მაისი", "ივნისი", "ივლისი", "აგვისტო"],
+        dayNamesMin: ["კვი", "ორშ", "სამ", "ოთხ", "ხუთ", "პარ", "შაბ"],
+        monthNamesShort: ["იანვარი", "თებერვალი", "მარტი", "აპრილი", "მაისი", "ივნისი", "ივლისი", "აგვისტო", "სექტემბერი", "ოქტომბერი", "ნოემბერი", "დეკემბერი"],
+        firstDay: 1,
+        afterShow: function () {
+            $('#ui-datepicker-div').addClass('show');
+            $('.ui-datepicker select').select2({
+                minimumResultsForSearch: -1,
+                theme: "datepicker"
+            });
+            $('.ui-datepicker select').on("select2:open", function () {
+                $('.select2-results').perfectScrollbar();
+            });
+        },
+    });
+    </script>
 </body>
 </html>

@@ -18,23 +18,6 @@
 
 <body>
     <div class="overlay"></div>
-
-    <div class="modal" id="warning">
-        <div class="modal-dialog modal-dialog-centered lit-w-modal">
-            <div class="modal-content">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true"><img src="img/modal-close.svg" alt="Close"></span>
-                </button>
-                <div class="modal-body">
-                    <div class="info-popup-img warning-icon"><img src="img/warning.svg" alt="warning"></div>
-                    <div class="info-popup-text">
-                        დაფიქსირდა შეცდომა
-                        <span>სცადე ხელახლა</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="modal" id="delete">
       <div class="modal-dialog modal-dialog-centered lit-w-modal">
         <div class="modal-content">
@@ -46,7 +29,8 @@
               <div class="info-popup-text">
                   ნამდვილად გსურს წაშლა?
               </div>
-              <div class="button red-fill-btn">წაშლა</div>
+              <div class="button red-fill-btn" data-toggle="modal"
+              data-target="#success-remove">წაშლა</div>
           </div>
         </div>
       </div>
@@ -62,6 +46,22 @@
               <div class="info-popup-text">
                   მოთხოვნა წარმატებით შესრულდა
                   <span>მონაცემები შენახულია</span>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="success-remove">
+      <div class="modal-dialog modal-dialog-centered lit-w-modal">
+        <div class="modal-content">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true"><img src="img/modal-close.svg" alt="Close"></span>
+          </button>
+          <div class="modal-body">
+              <div class="info-popup-img success-icon"><img src="img/tick.svg" alt="Check"></div>
+              <div class="info-popup-text">
+                  მოთხოვნა წარმატებით შესრულდა
+                  <span>მონაცემები წაშლილია</span>
               </div>
           </div>
         </div>
@@ -128,7 +128,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="logout-btn"><img src="img/logout.svg" alt="Logout"> გასვლა</div>
+                <a href="auth.html" class="logout-btn"><img src="img/logout.svg" alt="Logout"> გასვლა</a>
             </div>
             <div class="right-bar param-container">
                 <div class="right-bar-header">
@@ -456,9 +456,7 @@
                                 <select class="js-example-basic-single" name="state">
                                     <option value=""></option>
                                     <option value="1">ID ბარათი</option>
-                                    <option value="2">უარყოფილი</option>
-                                    <option value="3">პროცესში</option>
-                                    <option value="4">დახურული</option>
+                                    <option value="2">პასპორტი</option>
                                 </select>
                                 <label class="select-label">ბარათის ტიპი</label>
                             </div>
@@ -586,6 +584,12 @@
             $(this).parents('.password-field').find('input').prop('type', 'password');
             $(this).hide();
             $(this).prev('.show-pass').show();
+        });
+
+        
+        $("#success-remove").on('show.bs.modal', function (e) {
+            $("#delete").modal("hide");
+            $('body').removeClass('header-change');
         });
     </script>
 </body>

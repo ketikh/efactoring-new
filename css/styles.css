@@ -348,6 +348,10 @@ a.active-m-link {
     margin-right: 22px;
 }
 
+.logout-btn:hover {
+    color: #BCC8F9;
+}
+
 /* left bar end */
 
 /* right bar start */
@@ -460,7 +464,7 @@ a.active-m-link {
 }
 
 .notf-see-more {
-    color: #387D7A;
+    color: #5976F0;
     text-align: center;
     display: block;
     margin-left: -20px;
@@ -1482,6 +1486,10 @@ input {
 
 .info-popup-img.delete-icon {
     background: rgba(255, 70, 113, 0.08);
+}
+
+.delete-icon {
+    cursor: pointer;
 }
 
 .info-popup-text {

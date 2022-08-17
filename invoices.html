@@ -10,6 +10,7 @@
     <script src="js/jquery-3.1.0.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/chart.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
     <script src="js/select2.min.js"></script> 
     <script src="js/scripts.js"></script>
     <title>efactroring</title>
@@ -144,7 +145,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="logout-btn"><img src="img/logout.svg" alt="Logout"> გასვლა</div>
+                <a href="auth.html" class="logout-btn"><img src="img/logout.svg" alt="Logout"> გასვლა</a>
             </div>
             <div class="right-bar invoice-container inv-cont">
                 <div class="right-bar-header">
@@ -226,14 +227,14 @@
                             </div>
                         <div class="col-md-3 col-6">
                             <label class="pure-material-textfield-outlined">
-                                <input placeholder=" ">
+                                <input type="text" class="datepicker" placeholder=" ">
                                 <span>პერიოდი - დან</span>
                             </label>
                         </div>
                         <div class="col-md-3 col-6">
                             <label class="pure-material-textfield-outlined">
-                                <input placeholder=" ">
-                                <span>პერიოდი - დან</span>
+                                <input type="text" class="datepicker" placeholder=" ">
+                                <span>პერიოდი - მდე</span>
                             </label>
                         </div>
                         <div class="col-md-3 col-12">
@@ -280,7 +281,7 @@
                             <div class="td h-status">სტატუსი</div>
                         </div>
                         <div class="t-body">
-                            <a href="limit-number.html" class="t-lines">
+                            <a href="invoice-inside61.html" class="t-lines">
                                 <div class="td number-td"><span>N</span> 1135</div>
                                 <div class="td not-for-xs">25 აპრ 2019</div>
                                 <div class="td not-for-xs">10 000 GEL</div>
@@ -290,7 +291,7 @@
                                 <div class="td not-for-xs money">10 000.89 GEL</div>
                                 <div class="td td-status active"><span>აქტიური</span></div>
                             </a>
-                            <a href="limit-number.html" class="t-lines">
+                            <a href="invoice-inside61.html" class="t-lines">
                                 <div class="td number-td"><span>N</span> 1135</div>
                                 <div class="td not-for-xs">25 აპრ 2019</div>
                                 <div class="td not-for-xs">10 000 GEL</div>
@@ -300,7 +301,7 @@
                                 <div class="td not-for-xs money">10 000.89 GEL</div>
                                 <div class="td td-status rejected"><span>უარყოფილი</span></div>
                             </a>
-                            <a href="limit-number.html" class="t-lines">
+                            <a href="invoice-inside61.html" class="t-lines">
                                 <div class="td number-td"><span>N</span> 1135</div>
                                 <div class="td not-for-xs">25 აპრ 2019</div>
                                 <div class="td not-for-xs">10 000 GEL</div>
@@ -310,7 +311,7 @@
                                 <div class="td not-for-xs money">10 000.89 GEL</div>
                                 <div class="td td-status process"><span>პროცესში</span></div>
                             </a>
-                            <a href="limit-number.html" class="t-lines">
+                            <a href="invoice-inside61.html" class="t-lines">
                                 <div class="td number-td"><span>N</span> 1135</div>
                                 <div class="td not-for-xs">25 აპრ 2019</div>
                                 <div class="td not-for-xs">10 000 GEL</div>
@@ -346,5 +347,35 @@
             </div>
         </div>
     </section>
+    <script>
+        
+
+    $.datepicker._updateDatepicker_original = $.datepicker._updateDatepicker;
+    $.datepicker._updateDatepicker = function (inst) {
+        $.datepicker._updateDatepicker_original(inst);
+        var afterShow = this._get(inst, 'afterShow');
+        if (afterShow)
+            afterShow.apply((inst.input ? inst.input[0] : null));  // trigger custom callback
+    }
+    $(".datepicker").datepicker({
+        changeMonth: true,
+        changeYear: true,
+        dayNames: ["კვირა", "ორშაბათი", "სამშაბათი", "ოთხშაბათი", "ხუთშაბათი", "პარასკევი", "შაბათი"],
+        monthNames: ["იანვარი", "თებერვალი", "მარტი", "აპრილი", "მაისი", "ივნისი", "ივლისი", "აგვისტო"],
+        dayNamesMin: ["კვი", "ორშ", "სამ", "ოთხ", "ხუთ", "პარ", "შაბ"],
+        monthNamesShort: ["იანვარი", "თებერვალი", "მარტი", "აპრილი", "მაისი", "ივნისი", "ივლისი", "აგვისტო", "სექტემბერი", "ოქტომბერი", "ნოემბერი", "დეკემბერი"],
+        firstDay: 1,
+        afterShow: function () {
+            $('#ui-datepicker-div').addClass('show');
+            $('.ui-datepicker select').select2({
+                minimumResultsForSearch: -1,
+                theme: "datepicker"
+            });
+            $('.ui-datepicker select').on("select2:open", function () {
+                $('.select2-results').perfectScrollbar();
+            });
+        },
+    });
+    </script>
 </body>
 </html>

@@ -13,8 +13,8 @@
     <script src="js/jquery-3.1.0.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/chart.js"></script>
-    <script src="js/scripts.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
+        <script src="js/scripts.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
     <script src="js/select2.min.js"></script>
     <script src="js/perfect-scrollbar.js"></script>
     <title>efactroring</title>
@@ -91,18 +91,6 @@
                         <input type="text" class="datepicker" placeholder=" ">
                         <span>აირჩიე თარიღი</span>
                     </label>
-                    <label class="pure-material-textfield-outlined half-field">
-                        <input placeholder=" ">
-                        <span>გამცემი ორგანო</span>
-                    </label>
-                    <label class="pure-material-textfield-outlined half-field">
-                        <input type="text" class="datepicker" placeholder=" ">
-                        <span>აირჩიე თარიღი</span>
-                    </label>
-                    <label class="pure-material-textfield-outlined">
-                        <input placeholder=" ">
-                        <span>იურიდიული მისამართი</span>
-                    </label>
                     <label class="pure-material-textfield-outlined">
                         <input placeholder=" ">
                         <span>ფიზიკური მისამართი</span>
@@ -126,35 +114,34 @@
             $('body').toggleClass('factoring-mode');
         });
 
+
+
         $.datepicker._updateDatepicker_original = $.datepicker._updateDatepicker;
-        $.datepicker._updateDatepicker = function (inst) {
-            $.datepicker._updateDatepicker_original(inst);
-            var afterShow = this._get(inst, 'afterShow');
-            if (afterShow)
-                afterShow.apply((inst.input ? inst.input[0] : null));  // trigger custom callback
-        }
-        $(".datepicker").datepicker({
-            changeMonth: true,
-            changeYear: true,
-            dayNames: ["კვირა", "ორშაბათი", "სამშაბათი", "ოთხშაბათი", "ხუთშაბათი", "პარასკევი", "შაბათი"],
-            monthNames: ["იანვარი", "თებერვალი", "მარტი", "აპრილი", "მაისი", "ივნისი", "ივლისი", "აგვისტო"],
-            dayNamesMin: ["კვი", "ორშ", "სამ", "ოთხ", "ხუთ", "პარ", "შაბ"],
-            monthNamesShort: ["იანვარი", "თებერვალი", "მარტი", "აპრილი", "მაისი", "ივნისი", "ივლისი", "აგვისტო", "სექტემბერი", "ოქტომბერი", "ნოემბერი", "დეკემბერი"],
-            firstDay: 1,
-            afterShow: function () {
-                $('#ui-datepicker-div').addClass('show');
-                $('.ui-datepicker select').select2({
-                    minimumResultsForSearch: -1,
-                    theme: "datepicker"
-                });
-                $('.ui-datepicker select').on("select2:open", function () {
-                    $('.select2-results').perfectScrollbar();
-                });
-            },
-        });
-
-
-
+    $.datepicker._updateDatepicker = function (inst) {
+        $.datepicker._updateDatepicker_original(inst);
+        var afterShow = this._get(inst, 'afterShow');
+        if (afterShow)
+            afterShow.apply((inst.input ? inst.input[0] : null));  // trigger custom callback
+    }
+    $(".datepicker").datepicker({
+        changeMonth: true,
+        changeYear: true,
+        dayNames: ["კვირა", "ორშაბათი", "სამშაბათი", "ოთხშაბათი", "ხუთშაბათი", "პარასკევი", "შაბათი"],
+        monthNames: ["იანვარი", "თებერვალი", "მარტი", "აპრილი", "მაისი", "ივნისი", "ივლისი", "აგვისტო"],
+        dayNamesMin: ["კვი", "ორშ", "სამ", "ოთხ", "ხუთ", "პარ", "შაბ"],
+        monthNamesShort: ["იანვარი", "თებერვალი", "მარტი", "აპრილი", "მაისი", "ივნისი", "ივლისი", "აგვისტო", "სექტემბერი", "ოქტომბერი", "ნოემბერი", "დეკემბერი"],
+        firstDay: 1,
+        afterShow: function () {
+            $('#ui-datepicker-div').addClass('show');
+            $('.ui-datepicker select').select2({
+                minimumResultsForSearch: -1,
+                theme: "datepicker"
+            });
+            $('.ui-datepicker select').on("select2:open", function () {
+                $('.select2-results').perfectScrollbar();
+            });
+        },
+    });
     </script>
 </body>
 
