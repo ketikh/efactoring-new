@@ -3731,6 +3731,14 @@ body.factoring-mode .pattern-green {
     left: -85%;
     bottom: 120px;
 }
+
+.tbl-6 .t-lines {
+    cursor: pointer;
+}
+
+.bid-body .t-lines {
+    cursor: pointer;
+}
 /* right bar end */
 
 @media only screen and (max-width: 1810px) {
